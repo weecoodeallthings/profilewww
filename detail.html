@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide View & Document Details | weecoo.</title>
+  <meta name="description" content="Detail slide buku interaktif dari weecoo studio. Dirancang secara estetis dan screenshotable untuk materi sosial mediamu.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container flex-between">
+      <a href="index.html" class="logo">weecoo<span class="dot">.</span></a>
+      <nav class="nav-menu">
+        <a href="about.html" class="nav-link">Tentang Weecoo</a>
+        <a href="index.html#about" class="nav-link">Filosofi</a>
+        <a href="index.html#services" class="nav-link">Layanan</a>
+        <a href="index.html#showcase" class="nav-link">Showcase</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://instagram.com/weecoo" target="_blank" rel="noopener noreferrer" class="neo-btn">DM Kita di IG</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Slide Hero Header -->
+    <section class="detail-hero">
+      <div class="container">
+        <div class="neo-badge neo-badge-outline" id="detail-category-badge">RESOURCE DETAIL</div>
+        <h1 class="hero-title" style="margin-top: 1rem; font-size: 2rem;" id="detail-main-title">SLIDE BUKU SCREENSHOTABLE</h1>
+        <p class="hero-desc" style="max-width: 600px; margin: 0.5rem auto 0 auto; font-size: 1rem;">
+          Gunakan tombol di bawah slide untuk mengganti halaman. Screenshot slide square ini untuk materi feeds Instagram kamu! 📸
+        </p>
+      </div>
+    </section>
+
+    <!-- Slide Book Post Viewport Section -->
+    <section class="detail-section">
+      <div class="container flex-center">
+        
+        <div class="book-container">
+          <!-- The strictly square slide container (perfect 1080x1080 screenshot area) -->
+          <div class="book-viewport" id="screenshot-area">
+            
+            <!-- Book Slide Header -->
+            <div class="book-header">
+              <span class="book-brand">weecoo<span style="color: var(--color-fg);">.</span></span>
+              <span class="book-page-num" id="slide-number">PAGE 1 / 4</span>
+            </div>
+
+            <!-- Book Slide Content -->
+            <div class="book-content-area" id="slide-content">
+              <!-- Content injected dynamically -->
+            </div>
+
+            <!-- Book Slide Footer -->
+            <div class="book-footer">
+              <span class="book-author">@weecoo</span>
+              <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase;">MASTERED BLUEPRINT ⚡</span>
+            </div>
+
+          </div>
+
+          <!-- Interactive Slide Controls -->
+          <div class="book-controls">
+            <a href="list.html" id="back-to-list-btn" class="book-btn">➔ KEMBALI KE LIST</a>
+            <div style="display: flex; gap: 0.75rem;">
+              <button id="prev-btn" class="book-btn">◀ PREV</button>
+              <button id="next-btn" class="book-btn">NEXT ▶</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Brutalist Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid flex-between">
+        <div>
+          <span class="footer-logo">weecoo.</span>
+          <p class="footer-tagline">Brutally premium templates and custom blueprints for modern developers.</p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">Tentang Weecoo</a>
+          <a href="index.html#about">Filosofi</a>
+          <a href="index.html#services">Layanan</a>
+          <a href="index.html#showcase">Showcase</a>
+          <a href="https://instagram.com/weecoo" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 weecoo. Crafted with pure focus & no cap. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide Engine Script -->
+  <script>
+    // Slide content database
+    const slideDb = {
+      program: {
+        discount: {
+          category: "PROGRAM DISKON",
+          mainTitle: "PROGRAM DISKON",
+          slides: [
+            {
+              title: "WCO NEW YEAR: DISCOUNT PROGRAM 🎁",
+              subtitle: "Program potongan harga spesial untuk Mahasiswa IT & Siswa SMK RPL! Dapatkan diskon langsung sebesar 25% untuk jasa joki pembuatan website tugas akhir, skripsi, dan proyek sekolah.",
+              bullets: []
+            },
+            {
+              title: "DETAIL PROMO DISKON JOKI 💡",
+              subtitle: "",
+              bullets: [
+                "1. Diskon Langsung 25%: Berlaku untuk jasa pembuatan website tugas akhir (TA), skripsi, tugas sekolah/kuliah, dan slicing Figma.",
+                "2. Waktu Terbatas: Promo diskon spesial ini berlaku mulai 25 Desember hingga 5 Januari.",
+                "3. Tanpa Syarat Rumit: Cukup ajukan requirement tugas/TA kamu ke tim kami selama periode promo, diskon otomatis dipotong dari nilai deal akhir.",
+                "4. Tetap Dapet Bonus Penjelasan: Meskipun diskon besar, kamu tetep dapet modul penjelasan baris kode (logic flow, skema database, arsitektur CSS) secara lengkap!"
+              ]
+            },
+            {
+              title: "SIMULASI HARGA JOKI TUGAS 💰",
+              subtitle: "",
+              bullets: [
+                "Contoh Kasus: Kamu memesan website Tugas Akhir (TA) Sistem Informasi berbasis Laravel & React dengan deal akhir Rp 2.000.000.",
+                "Potongan Promo (25%): Kamu otomatis hemat sebesar Rp 500.000 dari total harga awal.",
+                "Harga Setelah Diskon: Cukup bayar Rp 1.500.000 bersih untuk mendapatkan source code web premium bergaransi.",
+                "Dapatkan web tugas akhir yang rapi, responsif, siap kumpul, lengkap dengan panduan penjelasan materi untuk presentasi sidang!"
+              ]
+            },
+            {
+              title: "CARA KLAIM PROMO DISKON ⚡",
+              subtitle: "",
+              bullets: [
+                "Langkah 1: Kunjungi profil Instagram kami di @weecoo.",
+                "Langkah 2: Hubungi admin via Direct Message (DM) dan kirim pesan berkode: WCODISCOUNT25.",
+                "Langkah 3: Konsultasikan requirement tugas atau rancangan web Tugas Akhir kamu secara gratis.",
+                "Langkah 4: Klaim promo potongan 25% langsung saat deal pemesanan dan mulai pengerjaan!"
+              ]
+            }
+          ]
+        }
+      },
+      announce: {
+        launch: {
+          category: "PENGUMUMAN RESMI",
+          mainTitle: "WCO LAUNCH HARI INI",
+          slides: [
+            {
+              title: "GRAND LAUNCHING JASA JOKI WEB WEECOO 🚀",
+              subtitle: "Platform joki pembuatan website dan bimbingan coding Weecoo resmi mengudara secara publik! Kami siap membantu Mahasiswa IT & Siswa SMK RPL menyelesaikan tugas-tugas coding tersulit.",
+              bullets: []
+            },
+            {
+              title: "APA SEBENARNYA WEECOO ITU? 🛠️",
+              subtitle: "",
+              bullets: [
+                "Spesialis Joki Web IT & RPL: Kami merancang website tugas sekolah, tugas kuliah, dan Tugas Akhir (TA) dari nol dengan standard clean code.",
+                "Anti-Template Asal Jadi: Kami tidak melayani joki asal kelar yang kodenya berantakan. Kami bikin web berkualitas tinggi yang mudah dipahami.",
+                "Bonus Penjelasan Kode: Setiap project joki dilengkapi dokumen penjelas baris kode (logic flow, database schema, CSS) secara detail.",
+                "Simulasi Sidang Zoom (Opsional): Kami menyediakan layanan opsional simulasi presentasi & sidang via Zoom (dengan biaya tambahan) agar kamu siap menghadapi dosen/guru penguji."
+              ]
+            },
+            {
+              title: "LAUNCHING SPECIAL: PROMO IS LIVE 🎁",
+              subtitle: "",
+              bullets: [
+                "Membuka Promo Diskon: Menyambut peluncuran akbar ini, kami resmi membuka Program Diskon Spesial Tahun Baru secara publik!",
+                "Potongan Harga 25%: Dapatkan diskon langsung sebesar 25% untuk pemesanan joki pembuatan website tugas akhir dan tugas kuliah pilihanmu.",
+                "Konsultasi Requirement Gratis: Hubungi kami dan diskusikan ide custom project impianmu tanpa biaya awal apa pun.",
+                "Klaim Sekarang: Langsung DM kami di Instagram @weecoo untuk mendapatkan promo terbatas ini!"
+              ]
+            }
+          ]
+        }
+      },
+      insight: {
+        "1": {
+          category: "INSIGHT #01",
+          mainTitle: "PURE CODE VS FRAMEWORKS",
+          slides: [
+            {
+              title: "PURE CODE VS HEAVY FRAMEWORKS 🦾",
+              subtitle: "Mengapa menguasai HTML/CSS murni membuatmu jauh lebih unggul di era web yang lambat dan penuh dengan bloatware modern.",
+              bullets: []
+            },
+            {
+              title: "PERMASALAHAN BLOATWARE 📦",
+              subtitle: "",
+              bullets: [
+                "Framework modern sering memuat ribuan dependency tak terpakai.",
+                "Membuat beban muat halaman membengkak dari kilobyte menjadi megabyte.",
+                "Menurunkan kecepatan rendering awal di browser seluler yang lambat.",
+                "Meningkatkan kompleksitas debugging untuk project skala kecil-menengah."
+              ]
+            },
+            {
+              title: "KEUNGGULAN PURE CUSTOM CODE ⚡",
+              subtitle: "",
+              bullets: [
+                "Ukuran Minimalis: File bersih murni hanya berukuran beberapa kilobyte saja.",
+                "Load Super Kilat: Browser merender element secara instan tanpa parsing library.",
+                "Optimalisasi SEO: Struktur DOM bersih memudahkan Google mengindeks halaman.",
+                "Kendali Penuh: Kamu memahami setiap baris kode yang tertulis tanpa black box."
+              ]
+            },
+            {
+              title: "KESIMPULAN: PILIH BIJAKSANA 🎯",
+              subtitle: "",
+              bullets: [
+                "Framework bagus untuk aplikasi skala raksasa tingkat enterprise.",
+                "Namun untuk landing page, portofolio, dan micro-sites, pure code menang mutlak.",
+                "Kuasai dasar HTML/CSS/JS murni agar kamu memiliki skill fundamental tingkat dewa!",
+                "Di Weecoo, kami merayakan performa murni untuk setiap blueprints yang kami bangun."
+              ]
+            }
+          ]
+        },
+        "2": {
+          category: "INSIGHT #02",
+          mainTitle: "BRUTALIST DESIGN CORE",
+          slides: [
+            {
+              title: "BRUTALIST WEB DESIGN CORE 🎨",
+              subtitle: "Mendobrak kejenuhan layout minimalis korporat yang membosankan lewat estetika berani, jujur, dan berkarakter kuat.",
+              bullets: []
+            },
+            {
+              title: "CIRI KHAS ESTETIKA BRUTALISME ⚔️",
+              subtitle: "",
+              bullets: [
+                "Solid Borders: Menggunakan garis pembatas hitam tebal (3px ke atas).",
+                "Flat Offset Shadows: Bayangan kotak padat tanpa efek blur yang tegas.",
+                "High Contrast Badges: Penggunaan label bertolak belakang warna untuk penekanan.",
+                "Asymmetrical Grids: Layout modular yang dinamis dan terkesan 'mentah'."
+              ]
+            },
+            {
+              title: "KENDALI TYPOGRAPHY & WARNA 💥",
+              subtitle: "",
+              bullets: [
+                "Font Geometris: Memakai font modern berbobot ekstra tebal seperti Outfit.",
+                "Harmoni Monokrom: Kombinasi kontras tinggi hitam/putih dengan satu warna aksen.",
+                "Legibilitas Tinggi: Menolak manipulasi font yang mengorbankan keterbacaan teks.",
+                "Tampilan Terpercaya: Memberikan kesan berani, jujur, dan anti-mainstream."
+              ]
+            }
+          ]
+        },
+        "3": {
+          category: "INSIGHT #03",
+          mainTitle: "SEO & SEMANTIC HTML MARKUP",
+          slides: [
+            {
+              title: "SEO & SEMANTIC HTML MARKUP 🔍",
+              subtitle: "Mengapa menulis kerangka kode HTML yang semantik bisa membuat robot pencari Google jatuh cinta pada website buatanmu secara instan.",
+              bullets: []
+            },
+            {
+              title: "BAHAYA 'DIV SOUP' 🍲",
+              subtitle: "",
+              bullets: [
+                "Banyak developer menyusun layout hanya bermodalkan tag <div> bertingkat.",
+                "Menyebabkan struktur DOM menjadi tidak terbaca oleh screen reader.",
+                "Menyulitkan mesin pencari memahami struktur informasi halaman.",
+                "Meningkatkan resiko kesalahan penutupan tag pembuka kode."
+              ]
+            },
+            {
+              title: "BERALIH KE KODE SEMANTIK (PART 1) 🌟",
+              subtitle: "",
+              bullets: [
+                "Gunakan <header> dan <footer> untuk batas atas dan bawah halaman.",
+                "Bungkus isi konten utama dengan tag <main>.",
+                "Bagi wilayah informasi menggunakan <section>."
+              ]
+            },
+            {
+              title: "BERALIH KE KODE SEMANTIK (PART 2) 🌟",
+              subtitle: "",
+              bullets: [
+                "Terapkan <article> untuk konten tulisan mandiri atau item grid.",
+                "Gunakan <aside> untuk informasi pelengkap atau sidebar halaman."
+              ]
+            }
+          ]
+        },
+        "4": {
+          category: "INSIGHT #04",
+          mainTitle: "VISUAL ASSETS OPTIMIZATION",
+          slides: [
+            {
+              title: "VISUAL ASSETS OPTIMIZATION 📸",
+              subtitle: "Rahasia mengoptimalkan media visual website agar loading secepat kilat tanpa mengorbankan keindahan gambar di layar resolusi tinggi.",
+              bullets: []
+            },
+            {
+              title: "OPTIMASI GAMBAR MODERN ⚡",
+              subtitle: "",
+              bullets: [
+                "Konversi ke WebP/AVIF: Memangkas ukuran file gambar hingga 70% dari format PNG.",
+                "Responsive Images: Menggunakan attribute srcset untuk menyajikan gambar sesuai layar.",
+                "Lazy Loading: Menerapkan loading='lazy' agar gambar hanya dimuat saat di-scroll.",
+                "Explicit Dimensions: Selalu menulis width & height untuk mencegah layout shift."
+              ]
+            },
+            {
+              title: "PRIORITASKAN VEKTOR SVG 📐",
+              subtitle: "",
+              bullets: [
+                "Kualitas Infinity: Gambar vektor SVG tetap tajam meski di-zoom 1000% di layar Retina.",
+                "Ukuran Super Irit: SVG ditulis dalam markup teks xml yang sangat ringan.",
+                "Interaktivitas CSS: Element SVG bisa dimanipulasi warnanya langsung via CSS.",
+                "Weecoo Standard: Semua ilustrasi ikon di blueprints kami berbasis SVG murni!"
+              ]
+            }
+          ]
+        },
+        "5": {
+          category: "INSIGHT #05",
+          mainTitle: "MICRO-INTERACTIONS WITH CSS",
+          slides: [
+            {
+              title: "MICRO-INTERACTIONS WITH CSS ✨",
+              subtitle: "Cara menghidupkan elemen website agar terasa tactile, reaktif, dan memuaskan saat disentuh menggunakan pure vanilla CSS transition.",
+              bullets: []
+            },
+            {
+              title: "MENGAPA INTERAKSI PENTING? 🧠",
+              subtitle: "",
+              bullets: [
+                "Memberikan umpan balik instan bahwa suatu element bisa diklik.",
+                "Meningkatkan waktu rata-rata kunjungan (engagement) pengguna di website.",
+                "Menciptakan kesan profesional dan premium pada UI website.",
+                "Memandu alur pandang mata pengunjung menuju target konversi."
+              ]
+            },
+            {
+              title: "TRIK CSS TRANSITION PREMIUM 🪄",
+              subtitle: "",
+              bullets: [
+                "Gunakan cubic-bezier timing function untuk efek pantulan elastis.",
+                "Terapkan transform: translate(-3px, -3px) saat tombol di-hover.",
+                "Kombinasikan dengan offset shadow yang memanjang searah gerakan.",
+                "Hindari animasi berlebihan yang mengganggu kenyamanan bernavigasi."
+              ]
+            }
+          ]
+        },
+        "6": {
+          category: "INSIGHT #06",
+          mainTitle: "CLEAN CODE ARCHITECTURE",
+          slides: [
+            {
+              title: "CLEAN CODE ARCHITECTURE 📂",
+              subtitle: "Kunci rahasia menyusun arsitektur berkas kode agar tetap bersih, teratur, dan mudah dipahami meski digarap oleh banyak developer.",
+              bullets: []
+            },
+            {
+              title: "STRUKTUR MODULAR YANG IDEAL 🏗️",
+              subtitle: "",
+              bullets: [
+                "Pisahkan logika JS, struktur HTML, dan styling CSS ke file terpisah.",
+                "Bagi file CSS ke dalam segmentasi tokens, layout, components, dan responsive.",
+                "Gunakan penamaan class CSS yang deskriptif dan konsisten (standard BEM).",
+                "Kelompokkan semua file aset visual gambar ke dalam subfolder khusus /assets."
+              ]
+            },
+            {
+              title: "PENTINGNYA KODE YANG TERSTRUKTUR 🌟",
+              subtitle: "",
+              bullets: [
+                "Mempermudah proses debugging ketika terjadi kendala teknis.",
+                "Mempercepat adaptasi developer baru yang ikut bergabung dalam tim.",
+                "Memungkinkan penggunaan kembali (reusability) component di halaman lain.",
+                "Standard Weecoo: Bersih bagai karya seni, siap didelegasikan kapan saja!"
+              ]
+            }
+          ]
+        },
+        "7": {
+          category: "INSIGHT #07",
+          mainTitle: "CUSTOM CODE VS NO-CODE",
+          slides: [
+            {
+              title: "CUSTOM PURE-CODE VS NO-CODE 🚀",
+              subtitle: "Membongkar perbandingan komprehensif mengapa coding murni dari nol selalu memenangkan kendali dan skalabilitas jangka panjang untuk bisnismu.",
+              bullets: []
+            },
+            {
+              title: "KETERBATASAN PLATFORM NO-CODE 🔒",
+              subtitle: "",
+              bullets: [
+                "Sering terkunci oleh biaya langganan bulanan platform yang mahal.",
+                "Sulit melakukan kustomisasi logika bisnis yang unik dan rumit.",
+                "Performa website seringkali lambat karena script bawaan platform yang padat.",
+                "Source code seutuhnya milik platform, bukan milik bisnismu sendiri."
+              ]
+            },
+            {
+              title: "SUPERIORITAS CUSTOM PURE-CODE 🦾",
+              subtitle: "",
+              bullets: [
+                "Kepemilikan Penuh: Aset digital seutuhnya milikmu tanpa ikatan vendor.",
+                "Skalabilitas Tanpa Batas: Bebas mengintegrasikan API pihak ketiga mana pun.",
+                "Biaya Operasional Rendah: Bisa di-host gratis di platform static seperti GitHub.",
+                "Standard Weecoo: Kebebasan mutlak bagi kreator modern untuk bertumbuh!"
+              ]
+            }
+          ]
+        },
+        "8": {
+          category: "INSIGHT #08",
+          mainTitle: "SLEEK RESPONSIVE LAYOUTS",
+          slides: [
+            {
+              title: "SLEEK RESPONSIVE LAYOUTS 📱",
+              subtitle: "Kiat jitu mengamankan layout website agar tetap rapi, presisi, dan tidak hancur di layar handphone berukuran paling kecil sekalipun.",
+              bullets: []
+            },
+            {
+              title: "TEKNIK FLUID LAYOUT MODERN 📐",
+              subtitle: "",
+              bullets: [
+                "Gunakan CSS Grid & Flexbox untuk susunan grid yang fleksibel.",
+                "Gunakan unit relatif (rem, em, %) ketimbang ukuran absolut pixel (px).",
+                "Terapkan CSS clamp() untuk ukuran typography yang membesar otomatis.",
+                "Gunakan flex-wrap agar item otomatis berbaris ke bawah di layar sempit."
+              ]
+            },
+            {
+              title: "PENGUJIAN RESPONSIVITAS YANG KETAT 🔍",
+              subtitle: "",
+              bullets: [
+                "Selalu uji tampilan di resolusi terkecil smartphone (320px).",
+                "Pastikan tidak terjadi horizontal scrolling (kebocoran container layout).",
+                "Beri padding sentuh yang cukup besar untuk jempol pengguna mobile.",
+                "Weecoo Rule: Teks rata kanan-kiri (justified) di mobile untuk kerapian maksimal!"
+              ]
+            }
+          ]
+        },
+        "9": {
+          category: "INSIGHT #09",
+          mainTitle: "CSS CUSTOM TOKENS SYSTEM",
+          slides: [
+            {
+              title: "CSS CUSTOM TOKENS SYSTEM 🎨",
+              subtitle: "Bagaimana menyusun color tokens, spacing, dan variables terpusat di CSS agar bisa mengubah tema seluruh web dalam satu baris kode.",
+              bullets: []
+            },
+            {
+              title: "PEMANFAATAN CSS VARIABLES 📂",
+              subtitle: "",
+              bullets: [
+                "Definisikan semua warna primer di root selector (:root).",
+                "Buat variabel terpusat untuk ketebalan border (contoh: --border-thick: 3px solid).",
+                "Atur tokens transition timing untuk konsistensi seluruh mikro-animasi.",
+                "Gunakan penamaan variabel yang logis dan konsisten (standard design system)."
+              ]
+            },
+            {
+              title: "KEMUDAHAN MAINTENANCE GLOBAL 🛠️",
+              subtitle: "",
+              bullets: [
+                "Mempermudah migrasi ke fitur dark mode/light mode secara instan.",
+                "Menghemat ribuan baris kode duplikat yang tidak perlu ditulis ulang.",
+                "Mempercepat revisi warna aksen sesuai dengan kemauan brand.",
+                "Membantu developer lain memahami palet warna resmi websitemu."
+              ]
+            }
+          ]
+        },
+        "10": {
+          category: "INSIGHT #10",
+          mainTitle: "GITHUB WORKFLOW FOR CREATORS",
+          slides: [
+            {
+              title: "GITHUB WORKFLOW FOR CREATORS ⚙️",
+              subtitle: "Panduan praktis bagi solo developer dan content creators untuk mengamankan aset digital berhargamu menggunakan alur kerja GitHub teratur.",
+              bullets: []
+            },
+            {
+              title: "PENTINGNYA ATOMIC COMMIT ⚛️",
+              subtitle: "",
+              bullets: [
+                "Commit adalah riwayat simpanan terkecil perubahan kodemu.",
+                "Lakukan commit setelah menyelesaikan satu blok logika (atomic unit).",
+                "Tulis deskripsi commit yang jelas dan spesifik dalam bahasa Inggris.",
+                "Pisahkan pekerjaan eksperimen di branch devv sebelum dilempar ke main."
+              ]
+            },
+            {
+              title: "MANFAAT VERSION CONTROL SYSTEM 🌟",
+              subtitle: "",
+              bullets: [
+                "Menghindarkan resiko kehilangan file kode akibat kerusakan hardware.",
+                "Bisa memutar kembali waktu (rollback) ke versi kode yang stabil jika crash.",
+                "Memudahkan kolaborasi jarak jauh bersama tim developers lain.",
+                "Menampilkan kredibilitas dan transparansi keahlianmu ke calon klien."
+              ]
+            }
+          ]
+        }
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Parse URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const type = urlParams.get('type');
+      const id = urlParams.get('id');
+
+      // Check validation
+      if (!type || !id || !slideDb[type] || !slideDb[type][id]) {
+        // Redirect if invalid
+        window.location.href = "list.html";
+        return;
+      }
+
+      const activeRecord = slideDb[type][id];
+      // Dynamic Cover Slide (Hook) for Instagram carousel post
+      const coverSlide = {
+        isCover: true,
+        category: activeRecord.category,
+        title: activeRecord.mainTitle
+      };
+
+      // Clone slides and append the universal dynamic CTA closing slide for Instagram carousel format
+      const slides = [coverSlide, ...activeRecord.slides, {
+        title: "TERTARIK DENGAN BLUEPRINT KITA? ⚡",
+        subtitle: "Estetika brutalist, performa murni tanpa bloatware, and arsitektur premium serah terima 100% milikmu.",
+        bullets: [
+          "📩 Hubungi Kami: Punya ide proyek, landing page, atau butuh custom blueprints?",
+          "🔥 Direct Message: Kirim pesan sekarang juga via DM Instagram di @weecoo!",
+          "🎁 Program Diskon: Dapatkan potongan harga 25% spesial menyambut tahun baru!",
+          "⚡ Masterpiece Web: Mari rakit aplikasi murni, kilat, dan tanpa bloatware bersama kami!"
+        ]
+      }];
+      let currentSlideIdx = 0;
+
+      // Update meta titles
+      document.getElementById('detail-category-badge').textContent = activeRecord.category;
+      document.getElementById('detail-main-title').textContent = activeRecord.mainTitle;
+      document.getElementById('back-to-list-btn').href = `list.html?tab=${type}`;
+
+      // Dom nodes
+      const slideNumEl = document.getElementById('slide-number');
+      const slideContentEl = document.getElementById('slide-content');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      // Render slide function
+      function renderSlide() {
+        const slide = slides[currentSlideIdx];
+        slideNumEl.textContent = `PAGE ${currentSlideIdx + 1} / ${slides.length}`;
+
+        // Build HTML
+        let html = '';
+        if (slide.isCover) {
+          html = `
+            <div class="cover-slide-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%; gap: 1.5rem; padding: 1rem 0;">
+              <div class="neo-badge" style="font-size: 1.1rem; padding: 0.5rem 1.25rem; background: var(--color-fg); color: var(--color-white); letter-spacing: 0.05em; font-weight: 800; border: 3px solid var(--color-fg); box-shadow: 4px 4px 0 var(--color-fg); transform: rotate(-2deg); margin-bottom: 0.75rem;">
+                ${slide.category}
+              </div>
+              <h1 class="cover-main-title" style="font-size: 2.6rem; font-family: 'Outfit', sans-serif; font-weight: 900; line-height: 1.15; margin: 0.5rem 0; text-transform: uppercase; color: var(--color-fg); word-wrap: break-word; letter-spacing: -0.02em;">
+                ${slide.title}
+              </h1>
+              <div class="cover-decorations" style="display: flex; justify-content: center; gap: 1.5rem; margin: 0.75rem 0;">
+                <span style="font-size: 2.2rem; transform: rotate(-8deg); display: inline-block;">⚡</span>
+                <span style="font-size: 2.2rem; transform: rotate(12deg); display: inline-block;">⚔️</span>
+                <span style="font-size: 2.2rem; transform: rotate(-5deg); display: inline-block;">📦</span>
+              </div>
+              <div class="cover-badge-ig" style="margin-top: 1rem; font-size: 0.95rem; font-weight: 800; border: var(--border-thick); padding: 0.5rem 1.25rem; background: var(--color-bg); transform: rotate(1deg); box-shadow: 3px 3px 0 var(--color-fg);">
+                MASTERED BLUEPRINT BY @weecoo ➔
+              </div>
+            </div>
+          `;
+        } else {
+          // Escape raw HTML brackets to display tag names properly
+          const escapedTitle = slide.title.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          html = `<h2 class="book-title">${escapedTitle}</h2>`;
+          
+          if (slide.subtitle) {
+            const escapedSubtitle = slide.subtitle.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            html += `<p class="book-subtitle">${escapedSubtitle}</p>`;
+          }
+
+          if (slide.bullets && slide.bullets.length > 0) {
+            html += `<ul class="book-bullets">`;
+            slide.bullets.forEach(bullet => {
+              const escapedBullet = bullet.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+              html += `<li class="book-bullet-item">${escapedBullet}</li>`;
+            });
+            html += `</ul>`;
+          }
+        }
+
+        slideContentEl.innerHTML = html;
+
+        // Button disabled states
+        prevBtn.disabled = (currentSlideIdx === 0);
+        nextBtn.disabled = (currentSlideIdx === slides.length - 1);
+      }
+
+      // Event listeners
+      prevBtn.addEventListener('click', () => {
+        if (currentSlideIdx > 0) {
+          currentSlideIdx--;
+          renderSlide();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentSlideIdx < slides.length - 1) {
+          currentSlideIdx++;
+          renderSlide();
+        }
+      });
+
+      // Initial render
+      renderSlide();
+    });
+  </script>
+</body>
+</html>
