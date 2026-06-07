@@ -8,12 +8,12 @@
   --color-gray-dark: #a1a1a6;
   --color-accent: #1e1e1e;
   
-  --border-thick: 3px solid #ffffff;
-  --border-thin: 1.5px solid #ffffff;
+  --border-thick: 3px solid #48484a;
+  --border-thin: 1.5px solid #48484a;
   
-  --shadow-flat: 4px 4px 0px #ffffff;
-  --shadow-flat-hover: 7px 7px 0px #ffffff;
-  --shadow-flat-active: 1px 1px 0px #ffffff;
+  --shadow-flat: 4px 4px 0px #2c2c2e;
+  --shadow-flat-hover: 7px 7px 0px #555557;
+  --shadow-flat-active: 1px 1px 0px #1c1c1e;
   
   --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-fg);
   border: var(--border-thick);
   font-size: 0.95rem;
-  box-shadow: 3px 3px 0px var(--color-fg);
+  box-shadow: 3px 3px 0px #2c2c2e;
 }
 
 /* Header & Navigation */
@@ -234,8 +234,8 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
   background-color: var(--color-bg);
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 30px 30px;
   align-items: center;
 }
@@ -327,8 +327,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Philosophy Section */
 .philosophy-section {
   background-color: var(--color-bg);
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 2px, transparent 2px, transparent 40px);
 }
 
 .rules-box {
@@ -384,6 +383,20 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Services Section */
+.services-section {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.showcase-section {
+  background-color: var(--color-white) !important;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
 .services-header {
   margin-bottom: 4rem;
 }
@@ -418,6 +431,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Instagram Section */
+.instagram-section {
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.03) 15%, transparent 15%),
+    radial-gradient(rgba(255, 255, 255, 0.03) 15%, transparent 15%);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
 .insta-box {
   background: var(--color-white);
   text-align: center;
@@ -441,7 +463,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Consultation Section */
 .consultation-section {
   background-color: var(--color-bg);
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 2px, transparent 2px);
   background-size: 20px 20px;
 }
 
@@ -498,7 +520,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-group input:focus,
 .form-group textarea:focus {
   transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0px var(--color-fg);
+  box-shadow: 4px 4px 0px #555557;
   background: var(--color-white);
 }
 
@@ -560,7 +582,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hub Section */
 .hub-section {
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 25px;
   border-bottom: var(--border-thick);
 }
 
@@ -654,7 +678,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .detail-section {
   padding: 4rem 0;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 2px, transparent 2px, transparent 30px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -673,8 +698,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   aspect-ratio: 1; /* Strictly square 1080x1080 aspect ratio */
   background: var(--color-white);
-  border: 4px solid var(--color-fg);
-  box-shadow: 10px 10px 0px var(--color-fg);
+  border: 4px solid #48484a;
+  box-shadow: 10px 10px 0px #2c2c2e;
   display: flex;
   flex-direction: column;
   padding: 2.25rem;
@@ -687,7 +712,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid var(--color-fg);
+  border-bottom: 3px solid #48484a;
   padding-bottom: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -704,9 +729,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   font-size: 1.1rem;
   background: var(--color-fg);
-  color: var(--color-white);
+  color: var(--color-bg);
   padding: 0.25rem 0.75rem;
-  border: 2px solid var(--color-fg);
+  border: 2px solid #48484a;
 }
 
 .book-content-area {
@@ -747,12 +772,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.75rem 1rem;
   background: var(--color-bg);
   border: var(--border-thin);
-  border-left: 8px solid var(--color-fg);
+  border-left: 8px solid var(--color-gray-dark);
   font-weight: 600;
 }
 
 .book-footer {
-  border-top: 3px solid var(--color-fg);
+  border-top: 3px solid #48484a;
   padding-top: 1rem;
   margin-top: 1.25rem;
   display: flex;
@@ -780,14 +805,14 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-white);
   color: var(--color-fg);
   border: var(--border-thick);
-  box-shadow: 4px 4px 0px var(--color-fg);
+  box-shadow: var(--shadow-flat);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .book-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--color-fg);
+  box-shadow: var(--shadow-flat-hover);
 }
 
 .book-btn:disabled {
@@ -803,7 +828,11 @@ h1, h2, h3, h4, h5, h6 {
 .list-hero {
   padding: 5rem 0 3.5rem 0;
   text-align: center;
-  background: var(--color-white);
+  background-color: var(--color-white);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
   border-bottom: var(--border-thick);
 }
 
@@ -822,14 +851,14 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-white);
   color: var(--color-fg);
   border: var(--border-thick);
-  box-shadow: 4px 4px 0px var(--color-fg);
+  box-shadow: var(--shadow-flat);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .tab-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--color-fg);
+  box-shadow: var(--shadow-flat-hover);
 }
 
 .tab-btn.active {
@@ -862,13 +891,13 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2rem;
   background: var(--color-white);
   border: var(--border-thick);
-  box-shadow: 6px 6px 0px var(--color-fg);
+  box-shadow: 6px 6px 0px #2c2c2e;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .list-item-card:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 9px 9px 0px var(--color-fg);
+  box-shadow: 9px 9px 0px #555557;
 }
 
 .list-item-info {
@@ -899,7 +928,11 @@ h1, h2, h3, h4, h5, h6 {
 .about-hero {
   padding: 6rem 0 4rem 0;
   text-align: center;
-  background: var(--color-white);
+  background-color: var(--color-white);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
   border-bottom: var(--border-thick);
 }
 
@@ -927,7 +960,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
   font-size: 3.5rem;
   font-weight: 900;
-  box-shadow: 8px 8px 0px var(--color-fg);
+  box-shadow: 8px 8px 0px #2c2c2e;
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
   user-select: none;
 }
@@ -965,7 +998,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .wco-brutalist-logo:hover .logo-box {
   transform: translate(-5px, -5px) scale(1.05);
-  box-shadow: 12px 12px 0px var(--color-fg);
+  box-shadow: 12px 12px 0px #555557;
 }
 
 .wco-brutalist-logo:hover .box-w {
@@ -1015,8 +1048,7 @@ h1, h2, h3, h4, h5, h6 {
   body, p, h1, h2, h3, h4, h5, h6, 
   .hero-desc, .rules-intro, .insta-text, .consult-desc, 
   .service-card p, .rule-card p, .footer-tagline {
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
   }
 
   body {
@@ -1059,7 +1091,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 65px;
     height: 65px;
     font-size: 2.5rem;
-    box-shadow: 5px 5px 0px var(--color-fg);
+    box-shadow: 5px 5px 0px #2c2c2e;
   }
   
   .box-dot {
@@ -1111,7 +1143,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 1.5rem;
   }
 
-  .section-title-block.flex-between {
+  .section-title-block.flex-between,
+  .services-header.flex-between {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.25rem;
