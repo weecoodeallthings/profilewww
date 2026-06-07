@@ -437,8 +437,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-gray-dark);
 }
 
-/* Instagram Section */
-.instagram-section {
+/* TikTok Section */
+.tiktok-section {
   background-color: var(--color-bg);
   background-image: 
     radial-gradient(rgba(255, 255, 255, 0.03) 15%, transparent 15%),
