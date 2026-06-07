@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bongkar Trik Joki Nakal | weecoo.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=2">
+  <link rel="stylesheet" href="../content-styles.css">
+</head>
+<body class="dark-mode">
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container flex-between">
+      <a href="../../index.html" class="logo">weecoo<span style="color: var(--color-white);">.</span></a>
+      <nav class="nav-menu">
+        <a href="../../about.html" class="nav-link">Tentang Weecoo</a>
+        <a href="../../index.html#about" class="nav-link">Filosofi</a>
+        <a href="../../index.html#services" class="nav-link">Layanan</a>
+        <a href="../../index.html#showcase" class="nav-link">Showcase</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://www.tiktok.com/@weecoo" target="_blank" rel="noopener noreferrer" class="neo-btn">DM Kita di TikTok</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Slide Hero Header -->
+    <section class="detail-hero" style="padding: 3rem 0 1.5rem 0;">
+      <div class="container">
+        <div class="neo-badge neo-badge-outline">TIKTOK CONTENT #02</div>
+        <h1 class="hero-title" style="margin-top: 1rem; font-size: 2rem;">BONGKAR TRIK JOKI NAKAL</h1>
+        <p class="hero-desc" style="max-width: 600px; margin: 0.5rem auto 0 auto; font-size: 1rem;">
+          Screenshot slide 16:9 landscape ini untuk materi postingan foto TikTok kamu! 📸
+        </p>
+      </div>
+    </section>
+
+    <!-- Slide Book Post Viewport Section -->
+    <section class="content-detail-section">
+      <div class="content-container">
+        
+        <!-- Widescreen 16:9 Viewport -->
+        <div class="content-viewport" id="slide-viewport">
+          <!-- Dynamically filled by JS -->
+        </div>
+
+        <!-- Slide Navigation Controls -->
+        <div class="book-controls" style="margin-top: 1.5rem;">
+          <a href="../index.html" class="book-btn">➔ KEMBALI KE LIST</a>
+          <div>
+            <button class="book-btn" id="prev-btn">◀ PREV</button>
+            <button class="book-btn" id="next-btn">NEXT ▶</button>
+          </div>
+          <span class="book-page-num" id="page-num" style="font-weight: 800; min-width: 60px; text-align: center;">1 / 4</span>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Brutalist Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid flex-between">
+        <div>
+          <span class="footer-logo">weecoo.</span>
+          <p class="footer-tagline">Brutally premium templates and custom blueprints for modern developers.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../../about.html">Tentang Weecoo</a>
+          <a href="../../index.html#about">Filosofi</a>
+          <a href="../../index.html#services">Layanan</a>
+          <a href="../../index.html#showcase">Showcase</a>
+          <a href="https://www.tiktok.com/@weecoo" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 weecoo. Crafted with pure focus & no cap. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const slides = [
+      {
+        isCover: true,
+        category: "CONTENT #02",
+        title: "CARA CEK TUGAS CODING-MU HASIL COPAS 🚨"
+      },
+      {
+        title: "CIRI JOKI NAKAL / ABAL-ABAL",
+        subtitle: "Waspada modus joki lepas tangan yang membahayakan kelulusan kuliah:",
+        bullets: [
+          "Asal Kelar: Mengirimkan template web gratisan lalu sekadar mengubah teks judul utama.",
+          "Kode Error & Berantakan: Komentar kode berantakan, nama variabel acak, dan tidak ada logic modular.",
+          "Menghilang saat Direvisi: Sulit dihubungi atau meminta biaya tambahan besar saat ada revisi dosen."
+        ]
+      },
+      {
+        title: "3 CARA DETEKSI DETEKTIF KODE",
+        subtitle: "Lakukan audit mandiri pada file source code proyek web Anda:",
+        bullets: [
+          "Cek Komentar Kode: Komentar bahasa asing atau tanda AI generator menandakan hasil copas asal-asalan.",
+          "Periksa Library Tak Berguna: Import library berlebih yang sama sekali tidak digunakan di sistem.",
+          "Uji Modifikasi Logika: Coba ganti warna background atau ubah nama variabel, pastikan tidak error sistem."
+        ]
+      },
+      {
+        title: "JASA JOKI BERGARANSI DI WEECOO ⚡",
+        subtitle: "Kami membuat website custom dari nol (pure code) yang aman dan 100% dipahami mahasiswa:",
+        bullets: [
+          "Penjelasan Baris Kode: Dilengkapi rangkuman logic flow, database, dan CSS secara rinci.",
+          "Didampingi Sampai Paham: Layanan optional simulasi presentasi sidang via Zoom biar kamu siap tempur.",
+          "Hubungi Admin: Punya tugas coding menumpuk? Hubungi admin via DM TikTok di @weecoo sekarang!"
+        ]
+      }
+    ];
+
+    let currentIdx = 0;
+
+    function renderSlide() {
+      const slide = slides[currentIdx];
+      const viewport = document.getElementById('slide-viewport');
+      const pageNum = document.getElementById('page-num');
+      
+      pageNum.textContent = `${currentIdx + 1} / ${slides.length}`;
+      
+      if (slide.isCover) {
+        viewport.innerHTML = `
+          <div class="content-header">
+            <span class="content-brand">weecoo.</span>
+            <span class="content-page-num" id="page-num-inner"></span>
+          </div>
+          <div class="content-content-area">
+            <div class="content-cover-wrapper">
+              <div class="content-cover-badge">${slide.category}</div>
+              <h2 class="content-cover-title">${slide.title}</h2>
+            </div>
+          </div>
+          <div class="content-footer">
+            <span class="content-author">@weecoo</span>
+            <span class="content-author">MASTERED BLUEPRINT ⚡</span>
+          </div>
+        `;
+      } else {
+        let bulletListHtml = '';
+        slide.bullets.forEach(bullet => {
+          bulletListHtml += `<li class="content-bullet-item">${bullet}</li>`;
+        });
+        
+        viewport.innerHTML = `
+          <div class="content-header">
+            <span class="content-brand">weecoo.</span>
+            <span class="content-page-num" id="page-num-inner"></span>
+          </div>
+          <div class="content-content-area">
+            <h2 class="content-slide-title">${slide.title}</h2>
+            ${slide.subtitle ? `<p class="content-slide-subtitle">${slide.subtitle}</p>` : ''}
+            <ul class="content-bullets">
+              ${bulletListHtml}
+            </ul>
+          </div>
+          <div class="content-footer">
+            <span class="content-author">@weecoo</span>
+            <span class="content-author">MASTERED BLUEPRINT ⚡</span>
+          </div>
+        `;
+      }
+      
+      document.getElementById('page-num-inner').textContent = `${currentIdx + 1}/${slides.length}`;
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderSlide();
+      }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      if (currentIdx < slides.length - 1) {
+        currentIdx++;
+        renderSlide();
+      }
+    });
+
+    renderSlide();
+  </script>
+</body>
+</html>
