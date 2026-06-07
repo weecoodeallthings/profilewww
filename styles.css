@@ -55,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Layout Utilities */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -395,6 +396,12 @@ h1, h2, h3, h4, h5, h6 {
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+.section-title-block {
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  gap: 2rem;
 }
 
 .services-header {
@@ -739,6 +746,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.cover-main-title {
+  font-size: 2.6rem;
 }
 
 .book-title {
@@ -1146,7 +1157,52 @@ h1, h2, h3, h4, h5, h6 {
   .section-title-block.flex-between,
   .services-header.flex-between {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start !important;
     gap: 1.25rem;
+  }
+
+  /* Mobile Book Viewport & Controls overrides */
+  .book-viewport {
+    padding: 1.5rem;
+    box-shadow: 6px 6px 0px #2c2c2e;
+  }
+
+  .cover-main-title {
+    font-size: 1.8rem;
+  }
+
+  .book-title {
+    font-size: 1.5rem;
+  }
+
+  .book-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .book-bullet-item {
+    font-size: 0.85rem;
+  }
+
+  .book-controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .book-controls .book-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .book-controls > div {
+    width: 100%;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .book-controls > div .book-btn {
+    flex: 1;
   }
 }
