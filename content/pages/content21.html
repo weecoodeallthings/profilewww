@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css?v=2">
   <link rel="stylesheet" href="../content-styles.css">
+  <!-- PrismJS Dracula Theme for premium syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-dracula.min.css">
 </head>
 <body class="dark-mode">
 
@@ -36,6 +38,14 @@
     </section>
   </main>
 
+  <!-- PrismJS Core and components for code highlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup-templating.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+
   <script>
     const slides = [
   {
@@ -46,12 +56,14 @@
   {
     "title": "STRUKTUR DATA JWT",
     "subtitle": "Token terenkripsi berisi informasi user yang dibagi menjadi Header, Payload, dan Signature:",
-    "code": "// Format JWT Token\nconst token = &quot;headerBase64.payloadBase64.signatureHex&quot;;"
+    "code": "// Format JWT Token\nconst token = &quot;headerBase64.payloadBase64.signatureHex&quot;;",
+    "lang": "javascript"
   },
   {
     "title": "VERIFIKASI TOKEN DI BACKEND",
     "subtitle": "Memvalidasi kiriman token dari client sebelum memberikan akses ke data sensitif server:",
-    "code": "// Verifikasi JWT di server menggunakan Node.js\njwt.verify(token, &#039;SECRET_KEY&#039;, (err, decoded) =&gt; {\n  if (err) return res.sendStatus(403); // Token palsu/expired\n  req.user = decoded;\n});"
+    "code": "// Verifikasi JWT di server menggunakan Node.js\njwt.verify(token, &#039;SECRET_KEY&#039;, (err, decoded) =&gt; {\n  if (err) return res.sendStatus(403); // Token palsu/expired\n  req.user = decoded;\n});",
+    "lang": "javascript"
   },
   {
     "title": "KEUNGGULAN JWT AUTENTIKASI ⚡",
@@ -99,7 +111,8 @@
         
         let codeBlockHtml = '';
         if (slide.code) {
-          codeBlockHtml += '<pre class="content-code-block">' + slide.code + '</pre>';
+          const langClass = slide.lang ? 'language-' + slide.lang : 'language-javascript';
+          codeBlockHtml += '<pre class="' + langClass + '"><code class="' + langClass + '">' + slide.code + '</code></pre>';
         }
         
         viewport.innerHTML = 
@@ -120,6 +133,11 @@
       }
       
       document.getElementById('page-num-inner').textContent = (currentIdx + 1) + '/' + slides.length;
+      
+      // Trigger Prism highlighting for dynamically generated slides
+      if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+      }
     }
 
     document.getElementById('prev-btn').addEventListener('click', function() {

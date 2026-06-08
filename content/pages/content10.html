@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css?v=2">
   <link rel="stylesheet" href="../content-styles.css">
+  <!-- PrismJS Dracula Theme for premium syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-dracula.min.css">
 </head>
 <body class="dark-mode">
 
@@ -36,6 +38,14 @@
     </section>
   </main>
 
+  <!-- PrismJS Core and components for code highlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup-templating.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+
   <script>
     const slides = [
   {
@@ -46,12 +56,14 @@
   {
     "title": "CARA KLASIK: PROMISE CHAINING",
     "subtitle": "Menggunakan Promise '.then()' yang rentan membuat penulisan kode bersarang dan membingungkan:",
-    "code": "// Promise .then()\nfetch(url)\n  .then(res =&gt; res.json())\n  .then(data =&gt; console.log(data))\n  .catch(err =&gt; console.error(err));"
+    "code": "// Promise .then()\nfetch(url)\n  .then(res =&gt; res.json())\n  .then(data =&gt; console.log(data))\n  .catch(err =&gt; console.error(err));",
+    "lang": "javascript"
   },
   {
     "title": "SOLUSI MODERN: ASYNC/AWAIT",
     "subtitle": "Menulis kode asinkronus dengan gaya baris sekuensial yang rapi menggunakan try-catch block:",
-    "code": "async function getData(url) {\n  try {\n    const res = await fetch(url);\n    const data = await res.json();\n    console.log(data);\n  } catch (err) {\n    console.error(err);\n  }\n}"
+    "code": "async function getData(url) {\n  try {\n    const res = await fetch(url);\n    const data = await res.json();\n    console.log(data);\n  } catch (err) {\n    console.error(err);\n  }\n}",
+    "lang": "javascript"
   },
   {
     "title": "KUASAI CODING JAVASCRIPT MANDIRI! ⚡",
@@ -99,7 +111,8 @@
         
         let codeBlockHtml = '';
         if (slide.code) {
-          codeBlockHtml += '<pre class="content-code-block">' + slide.code + '</pre>';
+          const langClass = slide.lang ? 'language-' + slide.lang : 'language-javascript';
+          codeBlockHtml += '<pre class="' + langClass + '"><code class="' + langClass + '">' + slide.code + '</code></pre>';
         }
         
         viewport.innerHTML = 
@@ -120,6 +133,11 @@
       }
       
       document.getElementById('page-num-inner').textContent = (currentIdx + 1) + '/' + slides.length;
+      
+      // Trigger Prism highlighting for dynamically generated slides
+      if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+      }
     }
 
     document.getElementById('prev-btn').addEventListener('click', function() {

@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css?v=2">
   <link rel="stylesheet" href="../content-styles.css">
+  <!-- PrismJS Dracula Theme for premium syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-dracula.min.css">
 </head>
 <body class="dark-mode">
 
@@ -36,6 +38,14 @@
     </section>
   </main>
 
+  <!-- PrismJS Core and components for code highlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup-templating.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+
   <script>
     const slides = [
   {
@@ -46,12 +56,14 @@
   {
     "title": "MASALAH DINAMIS JAVASCRIPT",
     "subtitle": "JavaScript tidak mengecek tipe data saat pengetikan kode, memicu bug runtime saat dijalankan:",
-    "code": "// JS biasa tidak mendeteksi error sebelum run-time\nfunction sum(a, b) {\n  return a + b;\n}\nsum(5, &#039;10&#039;); // Output: &#039;510&#039; (Bukan 15)"
+    "code": "// JS biasa tidak mendeteksi error sebelum run-time\nfunction sum(a, b) {\n  return a + b;\n}\nsum(5, &#039;10&#039;); // Output: &#039;510&#039; (Bukan 15)",
+    "lang": "javascript"
   },
   {
     "title": "TYPESCRIPT: STATIS & PREDIKTIF",
     "subtitle": "Memberikan notifikasi error instan saat mengetik kode di editor sebelum dijalankan di browser:",
-    "code": "// TS mendeteksi tipe data secara ketat\nfunction sum(a: number, b: number): number {\n  return a + b;\n}\nsum(5, &#039;10&#039;); // Error: Argument type string not assignable"
+    "code": "// TS mendeteksi tipe data secara ketat\nfunction sum(a: number, b: number): number {\n  return a + b;\n}\nsum(5, &#039;10&#039;); // Error: Argument type string not assignable",
+    "lang": "typescript"
   },
   {
     "title": "UPGRADE KUALITAS CODING-MU! ⚡",
@@ -99,7 +111,8 @@
         
         let codeBlockHtml = '';
         if (slide.code) {
-          codeBlockHtml += '<pre class="content-code-block">' + slide.code + '</pre>';
+          const langClass = slide.lang ? 'language-' + slide.lang : 'language-javascript';
+          codeBlockHtml += '<pre class="' + langClass + '"><code class="' + langClass + '">' + slide.code + '</code></pre>';
         }
         
         viewport.innerHTML = 
@@ -120,6 +133,11 @@
       }
       
       document.getElementById('page-num-inner').textContent = (currentIdx + 1) + '/' + slides.length;
+      
+      // Trigger Prism highlighting for dynamically generated slides
+      if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+      }
     }
 
     document.getElementById('prev-btn').addEventListener('click', function() {
