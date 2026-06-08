@@ -78,64 +78,62 @@
       pageNum.textContent = (currentIdx + 1) + ' / ' + slides.length;
       
       if (slide.isCover) {
-        viewport.innerHTML = `
-          <div class="content-header">
-            <span class="content-brand">weecoo.</span>
-            <span class="content-page-num" id="page-num-inner"></span>
-          </div>
-          <div class="content-content-area">
-            <div class="content-cover-wrapper">
-              <div class="content-cover-badge">${slide.category}</div>
-              <h2 class="content-cover-title">${slide.title}</h2>
-            </div>
-          </div>
-          <div class="content-footer">
-            <span class="content-author">@weecoo</span>
-            <span class="content-author">MASTERED BLUEPRINT ⚡</span>
-          </div>
-        `;
+        viewport.innerHTML = 
+          '<div class="content-header">' +
+          '  <span class="content-brand">weecoo.</span>' +
+          '  <span class="content-page-num" id="page-num-inner"></span>' +
+          '</div>' +
+          '<div class="content-content-area">' +
+          '  <div class="content-cover-wrapper">' +
+          '    <div class="content-cover-badge">' + slide.category + '</div>' +
+          '    <h2 class="content-cover-title">' + slide.title + '</h2>' +
+          '  </div>' +
+          '</div>' +
+          '<div class="content-footer">' +
+          '  <span class="content-author">@weecoo</span>' +
+          '  <span class="content-author">MASTERED BLUEPRINT ⚡</span>' +
+          '</div>';
       } else {
         let bulletListHtml = '';
         if (slide.bullets) {
-          slide.bullets.forEach(bullet => {
-            bulletListHtml += \`<li class="content-bullet-item">\${bullet}</li>\`;
+          slide.bullets.forEach(function(bullet) {
+            bulletListHtml += '<li class="content-bullet-item">' + bullet + '</li>';
           });
         }
         
         let codeBlockHtml = '';
         if (slide.code) {
-          codeBlockHtml += \`<pre class="content-code-block">\${slide.code}</pre>\`;
+          codeBlockHtml += '<pre class="content-code-block">' + slide.code + '</pre>';
         }
         
-        viewport.innerHTML = `
-          <div class="content-header">
-            <span class="content-brand">weecoo.</span>
-            <span class="content-page-num" id="page-num-inner"></span>
-          </div>
-          <div class="content-content-area">
-            <h2 class="content-slide-title">${slide.title}</h2>
-            ${slide.subtitle ? \`<p class="content-slide-subtitle">\${slide.subtitle}</p>\` : ''}
-            ${codeBlockHtml}
-            ${bulletListHtml ? \`<ul class="content-bullets">\${bulletListHtml}</ul>\` : ''}
-          </div>
-          <div class="content-footer">
-            <span class="content-author">@weecoo</span>
-            <span class="content-author">MASTERED BLUEPRINT ⚡</span>
-          </div>
-        `;
+        viewport.innerHTML = 
+          '<div class="content-header">' +
+          '  <span class="content-brand">weecoo.</span>' +
+          '  <span class="content-page-num" id="page-num-inner"></span>' +
+          '</div>' +
+          '<div class="content-content-area">' +
+          '  <h2 class="content-slide-title">' + slide.title + '</h2>' +
+          (slide.subtitle ? '<p class="content-slide-subtitle">' + slide.subtitle + '</p>' : '') +
+          codeBlockHtml +
+          (bulletListHtml ? '<ul class="content-bullets">' + bulletListHtml + '</ul>' : '') +
+          '</div>' +
+          '<div class="content-footer">' +
+          '  <span class="content-author">@weecoo</span>' +
+          '  <span class="content-author">MASTERED BLUEPRINT ⚡</span>' +
+          '</div>';
       }
       
       document.getElementById('page-num-inner').textContent = (currentIdx + 1) + '/' + slides.length;
     }
 
-    document.getElementById('prev-btn').addEventListener('click', () => {
+    document.getElementById('prev-btn').addEventListener('click', function() {
       if (currentIdx > 0) {
         currentIdx--;
         renderSlide();
       }
     });
 
-    document.getElementById('next-btn').addEventListener('click', () => {
+    document.getElementById('next-btn').addEventListener('click', function() {
       if (currentIdx < slides.length - 1) {
         currentIdx++;
         renderSlide();
