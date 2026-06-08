@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css?v=2">
   <link rel="stylesheet" href="../content-styles.css">
+  <!-- PrismJS Dracula Theme for premium syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-dracula.min.css">
 </head>
 <body class="dark-mode">
 
@@ -36,6 +38,13 @@
     </section>
   </main>
 
+  <!-- PrismJS Core and components for code highlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+
   <script>
     const slides = [
   {
@@ -46,12 +55,14 @@
   {
     "title": "BAHAYA QUERY HARDCODED",
     "subtitle": "Menyisipkan variabel input secara mentah ke SQL query sangat membahayakan sistem:",
-    "code": "// CONTOH BAHAYA (VULNERABLE)\n$sql = &quot;SELECT * FROM users WHERE email = &#039;$userEmail&#039;&quot;;\n$result = $db-&gt;query($sql);"
+    "code": "// CONTOH BAHAYA (VULNERABLE)\n$sql = &quot;SELECT * FROM users WHERE email = &#039;$userEmail&#039;&quot;;\n$result = $db-&gt;query($sql);",
+    "lang": "php"
   },
   {
     "title": "SOLUSI: PREPARED STATEMENTS (PDO)",
     "subtitle": "Gunakan parameter binding agar payload berbahaya dibaca sebagai text biasa, bukan command:",
-    "code": "// CONTOH AMAN (PDO Prepared Statement)\n$stmt = $pdo-&gt;prepare(&#039;SELECT * FROM users WHERE email = :email&#039;);\n$stmt-&gt;execute([&#039;email&#039; =&gt; $userEmail]);"
+    "code": "// CONTOH AMAN (PDO Prepared Statement)\n$stmt = $pdo-&gt;prepare(&#039;SELECT * FROM users WHERE email = :email&#039;);\n$stmt-&gt;execute([&#039;email&#039; =&gt; $userEmail]);",
+    "lang": "php"
   },
   {
     "title": "CHECKLIST KEAMANAN WEBSITE ⚡",
@@ -99,7 +110,8 @@
         
         let codeBlockHtml = '';
         if (slide.code) {
-          codeBlockHtml += '<pre class="content-code-block">' + slide.code + '</pre>';
+          const langClass = slide.lang ? 'language-' + slide.lang : 'language-javascript';
+          codeBlockHtml += '<pre class="' + langClass + '"><code class="' + langClass + '">' + slide.code + '</code></pre>';
         }
         
         viewport.innerHTML = 
@@ -120,6 +132,11 @@
       }
       
       document.getElementById('page-num-inner').textContent = (currentIdx + 1) + '/' + slides.length;
+      
+      // Trigger Prism highlighting for dynamically generated slides
+      if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+      }
     }
 
     document.getElementById('prev-btn').addEventListener('click', function() {

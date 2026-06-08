@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css?v=2">
   <link rel="stylesheet" href="../content-styles.css">
+  <!-- PrismJS Dracula Theme for premium syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-dracula.min.css">
 </head>
 <body class="dark-mode">
 
@@ -36,6 +38,13 @@
     </section>
   </main>
 
+  <!-- PrismJS Core and components for code highlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+
   <script>
     const slides = [
   {
@@ -46,16 +55,18 @@
   {
     "title": "MENYELEKSI & MENGUBAH ELEMEN",
     "subtitle": "Mendapatkan target tag HTML di halaman web lalu mengubah isinya secara dinamis:",
-    "code": "// Seleksi elemen berdasarkan selector CSS\nconst title = document.querySelector(&#039;.hero-title&#039;);\ntitle.textContent = &#039;Aplikasi Web Custom&#039;;\ntitle.style.color = &#039;#39ff14&#039;;"
+    "code": "// Seleksi elemen berdasarkan selector CSS\nconst title = document.querySelector(&#039;.hero-title&#039;);\ntitle.textContent = &#039;Aplikasi Web Custom&#039;;\ntitle.style.color = &#039;#39ff14&#039;;",
+    "lang": "javascript"
   },
   {
     "title": "MENANGANI EVENT CLICK",
     "subtitle": "Menjalankan baris fungsi tertentu saat pengguna menekan tombol atau elemen web:",
-    "code": "// Event Listener Click\nconst btn = document.getElementById(&#039;submit-btn&#039;);\nbtn.addEventListener(&#039;click&#039;, () =&gt; {\n  alert(&#039;Data Berhasil Disimpan!&#039;);\n});"
+    "code": "// Event Listener Click\nconst btn = document.getElementById(&#039;submit-btn&#039;);\nbtn.addEventListener(&#039;click&#039;, () =&gt; {\n  alert(&#039;Data Berhasil Disimpan!&#039;);\n});",
+    "lang": "javascript"
   },
   {
     "title": "TINGGALKAN JQUERY DI 2026! ⚡",
-    "subtitle": "Browser modern saat ini sudah mendukung semua manipulasi DOM secara native tanpa library tambahan:",
+    "subtitle": "Browser modern saat ini sudah mendukung semua manipulasi DOM secara native tanpa library otomatis:",
     "bullets": [
       "Gunakan 'classList.add()' dan 'classList.remove()' untuk menambahkan/menghapus kelas CSS.",
       "Kode murni vanilla JS membuat ukuran file web Anda super ringan dan loading cepat.",
@@ -99,7 +110,8 @@
         
         let codeBlockHtml = '';
         if (slide.code) {
-          codeBlockHtml += '<pre class="content-code-block">' + slide.code + '</pre>';
+          const langClass = slide.lang ? 'language-' + slide.lang : 'language-javascript';
+          codeBlockHtml += '<pre class="' + langClass + '"><code class="' + langClass + '">' + slide.code + '</code></pre>';
         }
         
         viewport.innerHTML = 
@@ -120,6 +132,11 @@
       }
       
       document.getElementById('page-num-inner').textContent = (currentIdx + 1) + '/' + slides.length;
+      
+      // Trigger Prism highlighting for dynamically generated slides
+      if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+      }
     }
 
     document.getElementById('prev-btn').addEventListener('click', function() {
