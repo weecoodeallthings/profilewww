@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Custom vs WordPress | weecoo.</title>
+  <title>DOM Manipulation Tanpa jQuery | weecoo.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
@@ -40,34 +40,26 @@
     const slides = [
   {
     "isCover": true,
-    "category": "CONTENT #01",
-    "title": "WEBSITE CUSTOM VS WORDPRESS ⚔️"
+    "category": "CONTENT #15",
+    "title": "DOM MANIPULATION DENGAN VANILLA JAVASCRIPT 🛠️"
   },
   {
-    "title": "MASALAH BESAR WORDPRESS",
-    "subtitle": "CMS instan yang seringkali menyulitkan performa jangka panjang:",
-    "bullets": [
-      "PageSpeed Rendah: Struktur kode membengkak (bloatware) karena beban resource plugin berlebih.",
-      "Celah Keamanan: Plugin pihak ketiga tidak terawat rentan diserang hacker & disusupi malware.",
-      "Biaya Tersembunyi: Lisensi tema profesional dan plugin fungsional berbayar langganan tahunan."
-    ]
+    "title": "MENYELEKSI & MENGUBAH ELEMEN",
+    "subtitle": "Mendapatkan target tag HTML di halaman web lalu mengubah isinya secara dinamis:",
+    "code": "// Seleksi elemen berdasarkan selector CSS\nconst title = document.querySelector(&#039;.hero-title&#039;);\ntitle.textContent = &#039;Aplikasi Web Custom&#039;;\ntitle.style.color = &#039;#39ff14&#039;;"
   },
   {
-    "title": "KEUNGGULAN CUSTOM WEBSITE",
-    "subtitle": "Mengapa code murni dari nol (pure html/css/js) jauh lebih disukai oleh klien premium:",
-    "bullets": [
-      "Performa Ekstrim: Loading super cepat, skor PageSpeed 95-100% tanpa optimasi rumit.",
-      "Keamanan Maksimal: Kode unik tanpa plugin berlebih meminimalkan resiko serangan otomatis.",
-      "Desain Brutal & Unik: Tidak ada batasan template, bebas mewujudkan desain brutalist/modern apapun."
-    ]
+    "title": "MENANGANI EVENT CLICK",
+    "subtitle": "Menjalankan baris fungsi tertentu saat pengguna menekan tombol atau elemen web:",
+    "code": "// Event Listener Click\nconst btn = document.getElementById(&#039;submit-btn&#039;);\nbtn.addEventListener(&#039;click&#039;, () =&gt; {\n  alert(&#039;Data Berhasil Disimpan!&#039;);\n});"
   },
   {
-    "title": "PILIH PURE CODE UNTUK TUGAS / CLIENT ⚡",
-    "subtitle": "Hindari resiko sistem down saat demo sidang tugas akhir atau demo ke client:",
+    "title": "TINGGALKAN JQUERY DI 2026! ⚡",
+    "subtitle": "Browser modern saat ini sudah mendukung semua manipulasi DOM secara native tanpa library tambahan:",
     "bullets": [
-      "100% Lolos Plagiasi: Kode bersih, terstruktur, dan mudah dijelaskan baris per baris ke penguji.",
-      "Investasi Masa Depan: Keterampilan coding murni sangat dicari oleh tech-company global.",
-      "Hubungi Weecoo: Butuh jasa pembuatan web custom bergaransi? DM TikTok kami di @weecoo sekarang!"
+      "Gunakan 'classList.add()' dan 'classList.remove()' untuk menambahkan/menghapus kelas CSS.",
+      "Kode murni vanilla JS membuat ukuran file web Anda super ringan dan loading cepat.",
+      "Butuh bantuan menyusun program tugas akhir berarsitektur vanilla JS bersih? Hubungi TikTok @weecoo!"
     ]
   }
 ];

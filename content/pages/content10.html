@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Custom vs WordPress | weecoo.</title>
+  <title>Memahami Async/Await JS | weecoo.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
@@ -40,34 +40,26 @@
     const slides = [
   {
     "isCover": true,
-    "category": "CONTENT #01",
-    "title": "WEBSITE CUSTOM VS WORDPRESS ⚔️"
+    "category": "CONTENT #10",
+    "title": "MEMAHAMI ASYNC/AWAIT DI JAVASCRIPT 🔄"
   },
   {
-    "title": "MASALAH BESAR WORDPRESS",
-    "subtitle": "CMS instan yang seringkali menyulitkan performa jangka panjang:",
-    "bullets": [
-      "PageSpeed Rendah: Struktur kode membengkak (bloatware) karena beban resource plugin berlebih.",
-      "Celah Keamanan: Plugin pihak ketiga tidak terawat rentan diserang hacker & disusupi malware.",
-      "Biaya Tersembunyi: Lisensi tema profesional dan plugin fungsional berbayar langganan tahunan."
-    ]
+    "title": "CARA KLASIK: PROMISE CHAINING",
+    "subtitle": "Menggunakan Promise '.then()' yang rentan membuat penulisan kode bersarang dan membingungkan:",
+    "code": "// Promise .then()\nfetch(url)\n  .then(res =&gt; res.json())\n  .then(data =&gt; console.log(data))\n  .catch(err =&gt; console.error(err));"
   },
   {
-    "title": "KEUNGGULAN CUSTOM WEBSITE",
-    "subtitle": "Mengapa code murni dari nol (pure html/css/js) jauh lebih disukai oleh klien premium:",
-    "bullets": [
-      "Performa Ekstrim: Loading super cepat, skor PageSpeed 95-100% tanpa optimasi rumit.",
-      "Keamanan Maksimal: Kode unik tanpa plugin berlebih meminimalkan resiko serangan otomatis.",
-      "Desain Brutal & Unik: Tidak ada batasan template, bebas mewujudkan desain brutalist/modern apapun."
-    ]
+    "title": "SOLUSI MODERN: ASYNC/AWAIT",
+    "subtitle": "Menulis kode asinkronus dengan gaya baris sekuensial yang rapi menggunakan try-catch block:",
+    "code": "async function getData(url) {\n  try {\n    const res = await fetch(url);\n    const data = await res.json();\n    console.log(data);\n  } catch (err) {\n    console.error(err);\n  }\n}"
   },
   {
-    "title": "PILIH PURE CODE UNTUK TUGAS / CLIENT ⚡",
-    "subtitle": "Hindari resiko sistem down saat demo sidang tugas akhir atau demo ke client:",
+    "title": "KUASAI CODING JAVASCRIPT MANDIRI! ⚡",
+    "subtitle": "Async/await merupakan teknik dasar dalam integrasi API di aplikasi industri modern:",
     "bullets": [
-      "100% Lolos Plagiasi: Kode bersih, terstruktur, dan mudah dijelaskan baris per baris ke penguji.",
-      "Investasi Masa Depan: Keterampilan coding murni sangat dicari oleh tech-company global.",
-      "Hubungi Weecoo: Butuh jasa pembuatan web custom bergaransi? DM TikTok kami di @weecoo sekarang!"
+      "Gunakan kata kunci 'async' di depan deklarasi fungsi agar browser mengembalikan Promise.",
+      "Gunakan kata kunci 'await' hanya di dalam fungsi bertipe async untuk menunda eksekusi baris berikutnya.",
+      "Butuh panduan belajar pemrograman JavaScript modern terarah? Kunjungi TikTok kami @weecoo!"
     ]
   }
 ];

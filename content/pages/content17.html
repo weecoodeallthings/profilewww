@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Custom vs WordPress | weecoo.</title>
+  <title>Cookie vs Session di Server | weecoo.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
@@ -40,34 +40,34 @@
     const slides = [
   {
     "isCover": true,
-    "category": "CONTENT #01",
-    "title": "WEBSITE CUSTOM VS WORDPRESS ⚔️"
+    "category": "CONTENT #17",
+    "title": "PERBEDAAN COOKIE VS SESSION PADA APLIKASI WEB 🍪"
   },
   {
-    "title": "MASALAH BESAR WORDPRESS",
-    "subtitle": "CMS instan yang seringkali menyulitkan performa jangka panjang:",
+    "title": "COOKIE: DISIMPAN DI BROWSER",
+    "subtitle": "Berkas data teks kecil yang disimpan langsung di memori lokal browser milik user:",
     "bullets": [
-      "PageSpeed Rendah: Struktur kode membengkak (bloatware) karena beban resource plugin berlebih.",
-      "Celah Keamanan: Plugin pihak ketiga tidak terawat rentan diserang hacker & disusupi malware.",
-      "Biaya Tersembunyi: Lisensi tema profesional dan plugin fungsional berbayar langganan tahunan."
+      "Persistent Storage: Bisa diatur tanggal kadaluarsanya agar tetap ada meskipun browser ditutup.",
+      "Ukuran Kecil: Kapasitas terbatas hanya sekitar 4KB data per domain.",
+      "Resiko Keamanan: Dapat dibaca oleh kode JavaScript pihak ketiga jika tidak diberi flag 'HttpOnly'."
     ]
   },
   {
-    "title": "KEUNGGULAN CUSTOM WEBSITE",
-    "subtitle": "Mengapa code murni dari nol (pure html/css/js) jauh lebih disukai oleh klien premium:",
+    "title": "SESSION: DISIMPAN DI SERVER",
+    "subtitle": "Data berukuran besar yang disimpan secara aman di dalam sistem memori komputer server:",
     "bullets": [
-      "Performa Ekstrim: Loading super cepat, skor PageSpeed 95-100% tanpa optimasi rumit.",
-      "Keamanan Maksimal: Kode unik tanpa plugin berlebih meminimalkan resiko serangan otomatis.",
-      "Desain Brutal & Unik: Tidak ada batasan template, bebas mewujudkan desain brutalist/modern apapun."
+      "Sangat Aman: Client hanya memegang pengenal acak unik berupa ID Session (Session ID) saja.",
+      "Kapasitas Bebas: Ukuran penyimpanan data dibatasi oleh kapasitas RAM/SSD di komputer server.",
+      "Temporary: Data otomatis terhapus saat user menutup browser atau setelah durasi waktu tertentu."
     ]
   },
   {
-    "title": "PILIH PURE CODE UNTUK TUGAS / CLIENT ⚡",
-    "subtitle": "Hindari resiko sistem down saat demo sidang tugas akhir atau demo ke client:",
+    "title": "RANCANG MEKANISME LOGIN YANG AMAN ⚡",
+    "subtitle": "Gunakan kombinasi terbaik untuk keamanan user skripsi atau proyek web Anda:",
     "bullets": [
-      "100% Lolos Plagiasi: Kode bersih, terstruktur, dan mudah dijelaskan baris per baris ke penguji.",
-      "Investasi Masa Depan: Keterampilan coding murni sangat dicari oleh tech-company global.",
-      "Hubungi Weecoo: Butuh jasa pembuatan web custom bergaransi? DM TikTok kami di @weecoo sekarang!"
+      "Simpan ID login sensitif di dalam Session server untuk meminimalkan pemboboran akun.",
+      "Gunakan cookie dengan atribut Secure dan SameSite untuk mencegah serangan Cross-Site Request Forgery (CSRF).",
+      "Ingin membuat sistem autentikasi custom yang lolos audit dosen penguji? DM TikTok @weecoo sekarang!"
     ]
   }
 ];

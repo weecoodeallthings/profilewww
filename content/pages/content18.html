@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Custom vs WordPress | weecoo.</title>
+  <title>Pengenalan TypeScript | weecoo.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
@@ -40,34 +40,26 @@
     const slides = [
   {
     "isCover": true,
-    "category": "CONTENT #01",
-    "title": "WEBSITE CUSTOM VS WORDPRESS ⚔️"
+    "category": "CONTENT #18",
+    "title": "MENGENAL TYPESCRIPT: JAVASCRIPT DENGAN TIPE DATA ⚙️"
   },
   {
-    "title": "MASALAH BESAR WORDPRESS",
-    "subtitle": "CMS instan yang seringkali menyulitkan performa jangka panjang:",
-    "bullets": [
-      "PageSpeed Rendah: Struktur kode membengkak (bloatware) karena beban resource plugin berlebih.",
-      "Celah Keamanan: Plugin pihak ketiga tidak terawat rentan diserang hacker & disusupi malware.",
-      "Biaya Tersembunyi: Lisensi tema profesional dan plugin fungsional berbayar langganan tahunan."
-    ]
+    "title": "MASALAH DINAMIS JAVASCRIPT",
+    "subtitle": "JavaScript tidak mengecek tipe data saat pengetikan kode, memicu bug runtime saat dijalankan:",
+    "code": "// JS biasa tidak mendeteksi error sebelum run-time\nfunction sum(a, b) {\n  return a + b;\n}\nsum(5, &#039;10&#039;); // Output: &#039;510&#039; (Bukan 15)"
   },
   {
-    "title": "KEUNGGULAN CUSTOM WEBSITE",
-    "subtitle": "Mengapa code murni dari nol (pure html/css/js) jauh lebih disukai oleh klien premium:",
-    "bullets": [
-      "Performa Ekstrim: Loading super cepat, skor PageSpeed 95-100% tanpa optimasi rumit.",
-      "Keamanan Maksimal: Kode unik tanpa plugin berlebih meminimalkan resiko serangan otomatis.",
-      "Desain Brutal & Unik: Tidak ada batasan template, bebas mewujudkan desain brutalist/modern apapun."
-    ]
+    "title": "TYPESCRIPT: STATIS & PREDIKTIF",
+    "subtitle": "Memberikan notifikasi error instan saat mengetik kode di editor sebelum dijalankan di browser:",
+    "code": "// TS mendeteksi tipe data secara ketat\nfunction sum(a: number, b: number): number {\n  return a + b;\n}\nsum(5, &#039;10&#039;); // Error: Argument type string not assignable"
   },
   {
-    "title": "PILIH PURE CODE UNTUK TUGAS / CLIENT ⚡",
-    "subtitle": "Hindari resiko sistem down saat demo sidang tugas akhir atau demo ke client:",
+    "title": "UPGRADE KUALITAS CODING-MU! ⚡",
+    "subtitle": "Perusahaan skala besar saat ini mewajibkan penggunaan TypeScript demi stabilitas kode sistem:",
     "bullets": [
-      "100% Lolos Plagiasi: Kode bersih, terstruktur, dan mudah dijelaskan baris per baris ke penguji.",
-      "Investasi Masa Depan: Keterampilan coding murni sangat dicari oleh tech-company global.",
-      "Hubungi Weecoo: Butuh jasa pembuatan web custom bergaransi? DM TikTok kami di @weecoo sekarang!"
+      "Mempermudah proses refactoring kode berukuran besar tanpa merusak fitur lainnya.",
+      "Membantu auto-complete (IntelliSense) di VS Code berjalan sangat lancar dan akurat.",
+      "Kesulitan migrasi kode React/Next.js Anda ke TypeScript? Tim kami siap mendampingi via TikTok @weecoo!"
     ]
   }
 ];
