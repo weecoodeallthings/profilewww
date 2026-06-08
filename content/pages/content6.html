@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Custom vs WordPress | weecoo.</title>
+  <title>Mengamankan Web dari SQL Injection | weecoo.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
@@ -40,34 +40,26 @@
     const slides = [
   {
     "isCover": true,
-    "category": "CONTENT #01",
-    "title": "WEBSITE CUSTOM VS WORDPRESS ⚔️"
+    "category": "CONTENT #06",
+    "title": "PENCEGAHAN SQL INJECTION PADA WEBSITE 🔐"
   },
   {
-    "title": "MASALAH BESAR WORDPRESS",
-    "subtitle": "CMS instan yang seringkali menyulitkan performa jangka panjang:",
-    "bullets": [
-      "PageSpeed Rendah: Struktur kode membengkak (bloatware) karena beban resource plugin berlebih.",
-      "Celah Keamanan: Plugin pihak ketiga tidak terawat rentan diserang hacker & disusupi malware.",
-      "Biaya Tersembunyi: Lisensi tema profesional dan plugin fungsional berbayar langganan tahunan."
-    ]
+    "title": "BAHAYA QUERY HARDCODED",
+    "subtitle": "Menyisipkan variabel input secara mentah ke SQL query sangat membahayakan sistem:",
+    "code": "// CONTOH BAHAYA (VULNERABLE)\n$sql = &quot;SELECT * FROM users WHERE email = &#039;$userEmail&#039;&quot;;\n$result = $db-&gt;query($sql);"
   },
   {
-    "title": "KEUNGGULAN CUSTOM WEBSITE",
-    "subtitle": "Mengapa code murni dari nol (pure html/css/js) jauh lebih disukai oleh klien premium:",
-    "bullets": [
-      "Performa Ekstrim: Loading super cepat, skor PageSpeed 95-100% tanpa optimasi rumit.",
-      "Keamanan Maksimal: Kode unik tanpa plugin berlebih meminimalkan resiko serangan otomatis.",
-      "Desain Brutal & Unik: Tidak ada batasan template, bebas mewujudkan desain brutalist/modern apapun."
-    ]
+    "title": "SOLUSI: PREPARED STATEMENTS (PDO)",
+    "subtitle": "Gunakan parameter binding agar payload berbahaya dibaca sebagai text biasa, bukan command:",
+    "code": "// CONTOH AMAN (PDO Prepared Statement)\n$stmt = $pdo-&gt;prepare(&#039;SELECT * FROM users WHERE email = :email&#039;);\n$stmt-&gt;execute([&#039;email&#039; =&gt; $userEmail]);"
   },
   {
-    "title": "PILIH PURE CODE UNTUK TUGAS / CLIENT ⚡",
-    "subtitle": "Hindari resiko sistem down saat demo sidang tugas akhir atau demo ke client:",
+    "title": "CHECKLIST KEAMANAN WEBSITE ⚡",
+    "subtitle": "Tingkatkan ketahanan website tugas akhir atau komersial Anda:",
     "bullets": [
-      "100% Lolos Plagiasi: Kode bersih, terstruktur, dan mudah dijelaskan baris per baris ke penguji.",
-      "Investasi Masa Depan: Keterampilan coding murni sangat dicari oleh tech-company global.",
-      "Hubungi Weecoo: Butuh jasa pembuatan web custom bergaransi? DM TikTok kami di @weecoo sekarang!"
+      "Selalu validasi & sanitize semua input form yang diterima dari browser pengguna.",
+      "Matikan error display database di production untuk mencegah pembocoran struktur tabel.",
+      "Konsultasikan audit keamanan web Anda bersama tim ahli kami via DM TikTok @weecoo!"
     ]
   }
 ];

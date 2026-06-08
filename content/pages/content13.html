@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Custom vs WordPress | weecoo.</title>
+  <title>Tips Desain Web Responsif | weecoo.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
@@ -40,34 +40,26 @@
     const slides = [
   {
     "isCover": true,
-    "category": "CONTENT #01",
-    "title": "WEBSITE CUSTOM VS WORDPRESS ⚔️"
+    "category": "CONTENT #13",
+    "title": "TIPS MEMBUAT WEBSITE MOBILE-FIRST RESPONSIVE 📱"
   },
   {
-    "title": "MASALAH BESAR WORDPRESS",
-    "subtitle": "CMS instan yang seringkali menyulitkan performa jangka panjang:",
-    "bullets": [
-      "PageSpeed Rendah: Struktur kode membengkak (bloatware) karena beban resource plugin berlebih.",
-      "Celah Keamanan: Plugin pihak ketiga tidak terawat rentan diserang hacker & disusupi malware.",
-      "Biaya Tersembunyi: Lisensi tema profesional dan plugin fungsional berbayar langganan tahunan."
-    ]
+    "title": "MEDIA QUERIES: BREAKPOINTS",
+    "subtitle": "Tentukan breakpoint layar yang umum digunakan untuk menata ulang grid/flex items:",
+    "code": "/* CSS Media Query untuk Tablet &amp; Smartphone */\n@media (max-width: 768px) {\n  .showcase-grid {\n    grid-template-columns: 1fr; /* Stack satu kolom */\n  }\n}"
   },
   {
-    "title": "KEUNGGULAN CUSTOM WEBSITE",
-    "subtitle": "Mengapa code murni dari nol (pure html/css/js) jauh lebih disukai oleh klien premium:",
-    "bullets": [
-      "Performa Ekstrim: Loading super cepat, skor PageSpeed 95-100% tanpa optimasi rumit.",
-      "Keamanan Maksimal: Kode unik tanpa plugin berlebih meminimalkan resiko serangan otomatis.",
-      "Desain Brutal & Unik: Tidak ada batasan template, bebas mewujudkan desain brutalist/modern apapun."
-    ]
+    "title": "VIEWPORT META TAG",
+    "subtitle": "Tag HTML wajib pada tag head agar skala rendering website di ponsel tidak mengecil:",
+    "code": "&lt;!-- Viewport Configuration --&gt;\n&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;"
   },
   {
-    "title": "PILIH PURE CODE UNTUK TUGAS / CLIENT ⚡",
-    "subtitle": "Hindari resiko sistem down saat demo sidang tugas akhir atau demo ke client:",
+    "title": "PRINSIP MOBILE-FIRST DESIGN ⚡",
+    "subtitle": "Mulailah menyusun style untuk layar terkecil terlebih dahulu, lalu tambahkan aturan untuk layar besar:",
     "bullets": [
-      "100% Lolos Plagiasi: Kode bersih, terstruktur, dan mudah dijelaskan baris per baris ke penguji.",
-      "Investasi Masa Depan: Keterampilan coding murni sangat dicari oleh tech-company global.",
-      "Hubungi Weecoo: Butuh jasa pembuatan web custom bergaransi? DM TikTok kami di @weecoo sekarang!"
+      "Gunakan unit relatif seperti 'em', 'rem', 'vh', dan 'vw' agar komponen web fleksibel mengikuti ukuran layar.",
+      "Sembunyikan navigasi panjang dalam tombol menu burger pada tampilan mobile.",
+      "Website tugas akhirmu berantakan saat dibuka di HP? Beresin aja di Weecoo via DM TikTok @weecoo!"
     ]
   }
 ];

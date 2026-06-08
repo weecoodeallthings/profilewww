@@ -12,8 +12,6 @@
 </head>
 <body class="dark-mode">
 
-
-
   <main>
     <!-- Slide Book Post Viewport Section -->
     <section class="content-detail-section">
@@ -40,39 +38,39 @@
 
   <script>
     const slides = [
-      {
-        isCover: true,
-        category: "CONTENT #03",
-        title: "TRIK LOLOS SIDANG TUGAS AKHIR IT TANPA PANIK 🎓"
-      },
-      {
-        title: "3 PERTANYAAN KUNCI DOSEN PENGUJI",
-        subtitle: "Persiapkan jawaban terbaik untuk pertanyaan jebakan dosen berikut ini:",
-        bullets: [
-          "Kenapa Memilih Arsitektur Ini?: Jelaskan pembagian MVC/modular untuk kebersihan struktur kode.",
-          "Bagaimana Skema Relasi Database?: Pahami Primary Key, Foreign Key, dan relasi one-to-many antartabel.",
-          "Jelaskan Alur Kerja Fitur Utama: Gambarkan diagram alur sistem dari input user hingga respon database."
-        ]
-      },
-      {
-        title: "LANGKAH PERSIAPAN H-3 SIDANG",
-        subtitle: "Lakukan pemeriksaan checklist kelayakan sistem web Anda:",
-        bullets: [
-          "Uji Skenario Gagal/Error: Pastikan validasi form berjalan dan pesan error tampil ramah di antarmuka.",
-          "Buat Ringkasan Alur Logic: Catat poin penting cara kerja controller utama agar tidak lupa saat ditanya.",
-          "Latihan Presentasi Terbatas: Simulasikan demonstrasi fitur web secara efisien dalam waktu maksimal 10 menit."
-        ]
-      },
-      {
-        title: "BUTUH TEMAN TANDING SIMULASI? ⚡",
-        subtitle: "Kami merancang custom web tugas akhir sekaligus melatih mahasiswa agar siap sidang:",
-        bullets: [
-          "Panduan Penjelasan Baris Kode: PDF rangkuman skema database & alur logic modular yang mudah dipahami.",
-          "Sesi Simulasi Sidang Zoom: Rasakan atmosfer sidang nyata dengan tanya jawab teknis bersama tim kami.",
-          "DM Kita Sekarang: Konsultasikan judul tugas akhir kamu secara gratis via DM TikTok di @weecoo!"
-        ]
-      }
-    ];
+  {
+    "isCover": true,
+    "category": "CONTENT #03",
+    "title": "TRIK LOLOS SIDANG TUGAS AKHIR IT TANPA PANIK 🎓"
+  },
+  {
+    "title": "3 PERTANYAAN KUNCI DOSEN PENGUJI",
+    "subtitle": "Persiapkan jawaban terbaik untuk pertanyaan jebakan dosen berikut ini:",
+    "bullets": [
+      "Kenapa Memilih Arsitektur Ini?: Jelaskan pembagian MVC/modular untuk kebersihan struktur kode.",
+      "Bagaimana Skema Relasi Database?: Pahami Primary Key, Foreign Key, dan relasi one-to-many antartabel.",
+      "Jelaskan Alur Kerja Fitur Utama: Gambarkan diagram alur sistem dari input user hingga respon database."
+    ]
+  },
+  {
+    "title": "LANGKAH PERSIAPAN H-3 SIDANG",
+    "subtitle": "Lakukan pemeriksaan checklist kelayakan sistem web Anda:",
+    "bullets": [
+      "Uji Skenario Gagal/Error: Pastikan validasi form berjalan dan pesan error tampil ramah di antarmuka.",
+      "Buat Ringkasan Alur Logic: Catat poin penting cara kerja controller utama agar tidak lupa saat ditanya.",
+      "Latihan Presentasi Terbatas: Simulasikan demonstrasi fitur web secara efisien dalam waktu maksimal 10 menit."
+    ]
+  },
+  {
+    "title": "BUTUH TEMAN TANDING SIMULASI? ⚡",
+    "subtitle": "Kami merancang custom web tugas akhir sekaligus melatih mahasiswa agar siap sidang:",
+    "bullets": [
+      "Panduan Penjelasan Baris Kode: PDF rangkuman skema database & alur logic modular yang mudah dipahami.",
+      "Sesi Simulasi Sidang Zoom: Rasakan atmosfer sidang nyata dengan tanya jawab teknis bersama tim kami.",
+      "DM Kita Sekarang: Konsultasikan judul tugas akhir kamu secara gratis via DM TikTok di @weecoo!"
+    ]
+  }
+];
 
     let currentIdx = 0;
 
@@ -81,7 +79,7 @@
       const viewport = document.getElementById('slide-viewport');
       const pageNum = document.getElementById('page-num');
       
-      pageNum.textContent = `${currentIdx + 1} / ${slides.length}`;
+      pageNum.textContent = (currentIdx + 1) + ' / ' + slides.length;
       
       if (slide.isCover) {
         viewport.innerHTML = `
@@ -102,9 +100,16 @@
         `;
       } else {
         let bulletListHtml = '';
-        slide.bullets.forEach(bullet => {
-          bulletListHtml += `<li class="content-bullet-item">${bullet}</li>`;
-        });
+        if (slide.bullets) {
+          slide.bullets.forEach(bullet => {
+            bulletListHtml += \`<li class="content-bullet-item">\${bullet}</li>\`;
+          });
+        }
+        
+        let codeBlockHtml = '';
+        if (slide.code) {
+          codeBlockHtml += \`<pre class="content-code-block">\${slide.code}</pre>\`;
+        }
         
         viewport.innerHTML = `
           <div class="content-header">
@@ -113,10 +118,9 @@
           </div>
           <div class="content-content-area">
             <h2 class="content-slide-title">${slide.title}</h2>
-            ${slide.subtitle ? `<p class="content-slide-subtitle">${slide.subtitle}</p>` : ''}
-            <ul class="content-bullets">
-              ${bulletListHtml}
-            </ul>
+            ${slide.subtitle ? \`<p class="content-slide-subtitle">\${slide.subtitle}</p>\` : ''}
+            ${codeBlockHtml}
+            ${bulletListHtml ? \`<ul class="content-bullets">\${bulletListHtml}</ul>\` : ''}
           </div>
           <div class="content-footer">
             <span class="content-author">@weecoo</span>
@@ -125,7 +129,7 @@
         `;
       }
       
-      document.getElementById('page-num-inner').textContent = `${currentIdx + 1}/${slides.length}`;
+      document.getElementById('page-num-inner').textContent = (currentIdx + 1) + '/' + slides.length;
     }
 
     document.getElementById('prev-btn').addEventListener('click', () => {
